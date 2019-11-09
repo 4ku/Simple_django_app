@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4 style="text-align: center">Направление подготовки</h4>
+<h5 style="text-align: center">
+        {{direction.code}}  {{direction.name}}
+</h5>
+
+<h6 style="margin-bottom: 20px; margin-top: 20px;">Курсы по этому направлению</h6>
+
+{% for course in direction.course_set.all %}
+    <div style="margin-top: 10px;">
+        {{forloop.counter}}. 
+        <a href="{% url 'course_description' course.id %}" >
+            {{course.name}}
+        </a>
+        <a href="https://openedu.ru/{{course.url}}" class="right" style="margin-right: 150px;"><u>Перейти</u></a>
+    </div>
+{% endfor %}
+
+{% endblock content %}
+
+

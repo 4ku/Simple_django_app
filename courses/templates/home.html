@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row" style="margin-top: 200px;">
+    <div class="col s6">
+        <div class="card">
+            <div class="card-image">
+                <a href="{% url 'all_courses' %}"><img src="http://npoed.ru/uploads/courses/universities/oo.png" alt=""></a>
+            </div>
+            <div class="card-content">
+                <h6 class="light center">Каталог курсов</h6>
+            </div>
+        </div>
+    </div>
+    <div class="col s6">
+        <div class="card">
+            <div class="card-image">
+                <a href="{% url 'all_directions' %}"><img src="http://pk.chsu.ru/upload/pages/Napravlenija/bakalavriat.jpg" alt=""></a>
+            </div>
+            <div class="card-content">
+                <h6 class="light center">Направления подготовки</h6>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

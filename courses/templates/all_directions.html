@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 style="text-align: center">Направления подготовки</h3>
+    {% for direction in directions %}
+        <div style="margin-top: 10px;">
+            {{direction.code}}   <a href="{% url 'direction_description' direction.id %}" >{{direction.name}}</a>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
+
+
