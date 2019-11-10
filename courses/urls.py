@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from .models import Course, Direction
 
 urlpatterns = [
     path('', views.home),
@@ -13,9 +12,7 @@ urlpatterns = [
 
 ]
 
-from .load_courses import load_courses
 
-if len(Course.objects.all())==0:
-    load_courses()
+
 
 
