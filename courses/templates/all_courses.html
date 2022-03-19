@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h5 style="text-align: right">
+        <a href="{% url 'update_courses' %}" >Обновить список курсов</a>
+    </h5>
+<p style="text-align: right">(может занимать до 2 минут)</p>
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            <b style="color: green; font-size: 22px;">{{ message }}</b>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<h3 style="text-align: center">Каталог курсов</h3>
+    {% for course in courses %}
+        <div style="margin-top: 10px;">
+            {{forloop.counter}}. 
+            <a href="{% url 'course_description' course.id %}" >
+                {{course.name}}
+            </a>
+            <a href="https://openedu.ru/{{course.url}}" class="right" style="margin-right: 150px;"><u>Перейти</u></a>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
+
+
